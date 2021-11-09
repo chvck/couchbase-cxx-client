@@ -61,11 +61,17 @@ function(set_project_warnings project_name)
       ${CLANG_WARNINGS}
       -Wmisleading-indentation # warn if indentation implies blocks where blocks do not exist
       -Wduplicated-cond # warn if if / else chain has duplicated conditions
-      -Wduplicated-branches # warn if if / else branches have duplicated code
       -Wlogical-op # warn about logical operations being used where bitwise were probably wanted
       -Wuseless-cast # warn if you perform a cast to the same type
       -Wdeprecated-declarations # warn if [[deprecated]] elements being used
   )
+  if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.0)
+  else()
+      set(GCC_WARNINGS
+          ${GCC_WARNINGS}
+          -Wduplicated-branches # warn if if / else branches have duplicated code
+      )
+  endif()
 
   if(MSVC)
     set(PROJECT_WARNINGS ${MSVC_WARNINGS})
