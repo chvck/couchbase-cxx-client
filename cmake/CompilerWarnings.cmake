@@ -65,12 +65,11 @@ function(set_project_warnings project_name)
       -Wuseless-cast # warn if you perform a cast to the same type
       -Wdeprecated-declarations # warn if [[deprecated]] elements being used
   )
-  if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.0)
+  if(CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.0)
+
   else()
-      set(GCC_WARNINGS
-          ${GCC_WARNINGS}
-          -Wduplicated-branches # warn if if / else branches have duplicated code
-      )
+    set(GCC_WARNINGS ${GCC_WARNINGS} -Wduplicated-branches # warn if if / else branches have duplicated code
+    )
   endif()
 
   if(MSVC)
