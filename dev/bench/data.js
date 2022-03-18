@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1645536917985,
+  "lastUpdate": 1647636840238,
   "repoUrl": "https://github.com/couchbaselabs/couchbase-cxx-client",
   "entries": {
     "Mad Hatter": [
@@ -3776,6 +3776,37 @@ window.BENCHMARK_DATA = {
             "name": "get",
             "value": 536.933,
             "range": "± 223.348",
+            "unit": "us",
+            "extra": "100 samples\n1 iterations"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sergey.avseyev@gmail.com",
+            "name": "Sergey Avseyev",
+            "username": "avsej"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d648bafe7f2251e0b66884cdc503a50be706b0c4",
+          "message": "CXXCBC-95: use address from configuration for served_by_node in query (#172)",
+          "timestamp": "2022-03-18T20:39:00Z",
+          "tree_id": "ec81d78a1f8e0d40b7b5c8496638a6b480f0729e",
+          "url": "https://github.com/couchbaselabs/couchbase-cxx-client/commit/d648bafe7f2251e0b66884cdc503a50be706b0c4"
+        },
+        "date": 1647636839243,
+        "tool": "catch2",
+        "benches": [
+          {
+            "name": "get",
+            "value": 308.034,
+            "range": "± 69.0275",
             "unit": "us",
             "extra": "100 samples\n1 iterations"
           }
